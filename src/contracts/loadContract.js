@@ -1,6 +1,6 @@
 import Coffee from "./Coffee.json";
 
-const loadContract = async () => {
+const loadContract = async (web3) => {
   const abi = Coffee.abi;
   const contract = await new web3.eth.Contract(
     abi,
