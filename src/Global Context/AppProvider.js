@@ -16,7 +16,6 @@ const AppProvider = ({ children }) => {
       });
       const web3 = new Web3(window.ethereum);
       const contract = await loadContract(web3);
-      console.log(contract);
       setWeb3Api({
         web3,
         accounts: accounts[0],
