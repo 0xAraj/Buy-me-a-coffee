@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../Global Context/AppProvider";
 
 const Memo = () => {
+  const { memo } = useContext(AppContext);
   return (
     <section className="container py-3">
       <div className="row justify-content-center bg-warning">
@@ -9,19 +11,19 @@ const Memo = () => {
         <div className="col-3 border">Message</div>
         <div className="col-5 border">Address of Sender</div>
       </div>
-      <div className="row justify-content-center">
-        <div className="col-1 text-center">1</div>
-        <div className="col-2">Aditya Raj</div>
-        <div className="col-3">Doing great work man!</div>
-        <div className="col-5">0xd89c50aaA3B4102015eE201717e14327820c2b16</div>
-      </div>
-      <hr className="m-0" />
-      <div className="row justify-content-center">
-        <div className="col-1 text-center">1</div>
-        <div className="col-2">Aditya Raj</div>
-        <div className="col-3">Doing great work man!</div>
-        <div className="col-5">0xd89c50aaA3B4102015eE201717e14327820c2b16</div>
-      </div>
+      {memo.map((e, index) => {
+        return (
+          <div key={index}>
+            <div className="row justify-content-center py-1 border">
+              <div className="col-1 text-center">{index + 1}</div>
+              <div className="col-2 ">{e.name}</div>
+              <div className="col-3">{e.message}</div>
+              <div className="col-5">{e.sender}</div>
+            </div>
+            <hr className="m-0" />
+          </div>
+        );
+      })}
     </section>
   );
 };

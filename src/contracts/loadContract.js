@@ -4,7 +4,7 @@ const loadContract = async (web3) => {
   const abi = Coffee.abi;
   const contract = await new web3.eth.Contract(
     abi,
-    "0xd89c50aaA3B4102015eE201717e14327820c2b16"
+    "0x996fBe7D232eF735C1bf2fA0715020B6b21e9B8E"
   );
 
   return contract;
