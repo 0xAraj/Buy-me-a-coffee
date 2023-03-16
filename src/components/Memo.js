@@ -18,7 +18,15 @@ const Memo = () => {
               <div className="col-1 text-center">{index + 1}</div>
               <div className="col-2 ">{e.name}</div>
               <div className="col-3">{e.message}</div>
-              <div className="col-5">{e.sender}</div>
+              <div className="col-5">
+                <a
+                  href={`https://goerli.etherscan.io/address/${e.sender}`}
+                  target="_blank"
+                  className="nav-link text-dark"
+                >
+                  {e.sender}
+                </a>
+              </div>
             </div>
             <hr className="m-0" />
           </div>
